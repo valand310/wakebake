@@ -594,12 +594,16 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 60px;
+    gap: 15px;
+    align-items: center;
+    
 }
 
-.programm__heading {}
+
 
 .programm__title {
     margin-bottom: 20px;
+    
 }
 
 .programm__text {}
@@ -618,6 +622,8 @@ body {
     grid-template: repeat(3, auto) / 1.65fr 1fr;
     gap: 40px 40px;
     max-width: 501px;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .programm__discount {
@@ -715,6 +721,7 @@ body {
     padding: 14px 30px;
     box-shadow: 0px 4px 20px rgba(206, 195, 185, 0.3);
     transition: all .4s;
+    white-space: nowrap;
 }
 
 .tab-controls__link:hover {
@@ -758,9 +765,16 @@ body {
     background: transparent;
     font-size: inherit;
     display: flex;
+    gap: 15px;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
+    text-align: left;
+    transition: .4s;
 
+}
+
+.accordion__list-item--opened .accordion__list-control {
+    padding-bottom: 20px;
 }
 
 .accordion__list-control-title {
@@ -1021,6 +1035,21 @@ body {
         max-width: none;
         margin-top: 30px;
     }
+
+    /* -------- */
+
+    .programm__top {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px 15px;
+        
+    }
+
+    .tab-controls {
+        flex-wrap: wrap;
+    }
+
+    
 }
 
 
@@ -1052,6 +1081,19 @@ body {
         grid-column: 1/-1;
     }
 
+/* ------------------------- */
+
+.accordion__list-control {
+    padding: 25px 30px;
+}
+
+.accordion__list-control-title {
+    font-size: 32px;
+}
+
+.accordion-content {
+    gap: 30px;
+}
 
 }
 
@@ -1086,6 +1128,21 @@ body {
     .burger-icon {
         display: flex;
     }
+    /* ----------- */
+
+        .programm__action {
+            max-width: none;
+            grid-template: repeat(3, auto) / minmax(280px, 1fr) 1fr;
+        }
+
+    .programm__img {
+        display: none;
+    }
+    
+
+    
+    
+
 
     /* -------- */
 
@@ -1159,12 +1216,40 @@ body {
     .about__grid {
         grid-template: none;
     }
+
+    /* =--------- */
+
+    .tab-controls {
+        gap: 10px;
+        
+    }
+
+    .tab-controls__link {
+        padding: 6px 20px;
+        
+    }
+
+    .accordion-content {
+        flex-direction: column;
+    }
+
+    .accordion-content__col:first-child {
+        max-width: none;
+    }
+
+    .accordian-content__text {
+        max-width: none;
+    }
 }
 
 @media (max-width: 600px) {
 
     .main__about {
         padding: 60px 0;
+    }
+
+    .main__programm {
+        margin-bottom: 80px;
     }
 
     /* ------------ */
@@ -1194,6 +1279,57 @@ body {
         padding: 10px 15px;
 
     }
+
+    /* --------- */
+
+    /* --------- */
+
+    .programm__title {
+        text-align: center;
+    }
+
+    .programm__top {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .tab-controls {
+        justify-content: center;
+    }
+
+    .accordion__list-item {
+        margin-bottom: 10px;
+    }
+
+    .accordion__list-control-title {
+        font-size: 28px;
+    }
+
+    .accordion__list-control {
+        padding: 17px 30px;
+    }
+
+    .accordion__list-control-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .accordion__list-control-icon svg {
+        width: 10px;
+    }
+
+    .programm__action {
+        max-width: none;
+        grid-template: repeat(3, auto) /  repeat(2, auto);
+        gap: 16px;
+    }
+
+    .programm__discount {
+        grid-row: auto;
+        grid-column: 1/-1;
+        
+        justify-self: center; 
+    }
 }
 
 @media (max-width: 450px) {
@@ -1210,4 +1346,28 @@ body {
     .modal__title {
         font-size: 35px;
     }
+
+    /* --------- */
+    
+    .accordion__list-control {
+        padding: 17px 15px;
+    }
+    .accordion-content {
+        padding: 0 15px 30px;
+    }
+    .accordion-conten__item {
+        margin-bottom: 10px;
+        
+    }
+
+    .programm__action {
+        grid-template: none;
+       
+    }
+
+    .programm__price {
+        text-align: center;
+    }
+
+    
 }
